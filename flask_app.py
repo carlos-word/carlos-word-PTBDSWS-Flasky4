@@ -13,14 +13,14 @@ def index():
     current_time = datetime.utcnow()
     return render_template("index.html", current_time=current_time)
 
-# Identificação
-@app.route("/user/<name>/<prontuario>/<instituicao>")
-def identificacao(name, prontuario, instituicao):
+# Identificação (dados fixos)
+@app.route("/user")
+def identificacao():
     return render_template(
         "user.html",
-        name=name,
-        prontuario=prontuario,
-        instituicao=instituicao,
+        name="Carlos",
+        prontuario="PT3031527",
+        instituicao="IFSP",
     )
 
 # Contexto da requisição
